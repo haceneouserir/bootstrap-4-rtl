@@ -3,81 +3,106 @@
 /*!
  * Script to create the built examples zip archive;
  * requires the `zip` command to be present!
- * Copyright 2020 The Bootstrap Authors & Arash Laylazi
+ * Copyright 2018-2021 Arash Laylazi (Inspired by The Bootstrap Authors)
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
 'use strict'
 
-const shell = require('shelljs')
-shell.config.fatal = true
+const path = require('path')
+const sh = require('shelljs')
 
-if (!shell.test('-d', '_gh_pages')) {
-  throw new Error('The "_gh_pages" folder does not exist, did you forget building the docs?')
+const pkg = require('../package.json')
+
+const versionShort = pkg.config.version_short
+const distFolder = `bootstrap-${pkg.version}-rtl-examples`
+const rootDocsDir = '_gh_pages'
+const docsDir = `${rootDocsDir}/docs/${versionShort}/`
+
+// these are the files we need in the examples
+const cssFiles = [
+  'bootstrap-rtl.min.css',
+  'bootstrap-rtl.min.css.map'
+]
+const jsFiles = [
+  'bootstrap.bundle.min.js',
+  'bootstrap.bundle.min.js.map'
+]
+const imgFiles = [
+  'bootstrap-outline.svg',
+  'bootstrap-solid.svg'
+]
+
+sh.config.fatal = true
+
+if (!sh.test('-d', rootDocsDir)) {
+  throw new Error(`The "${rootDocsDir}" folder does not exist, did you forget building the docs?`)
 }
 
-const path = require('path')
-
 // switch to the root dir
-shell.cd(path.join(__dirname, '..'))
+sh.cd(path.join(__dirname, '..'))
 
-const {
-  version,
-  version_short: versionShort,
-  'rtl-revision': rtlRevision
-} = require('../package.json')
+// remove any previously created folder/zip with the same name
+sh.rm('-rf', [distFolder, `${distFolder}.zip`])
 
-const folderName = `bootstrap-${version}-rtl-examples`
-
-// remove any previously created folder with the same name
-shell.rm('-rf', folderName)
 // create any folders so that `cp` works
-shell.mkdir('-p', folderName)
-shell.mkdir('-p', `${folderName}/assets/brand/`)
+sh.mkdir('-p', [
+  distFolder,
+  `${distFolder}/assets/brand/`,
+  `${distFolder}/assets/dist/css/`,
+  `${distFolder}/assets/dist/js/`
+])
 
-shell.cp('-Rf', `_gh_pages/docs/${versionShort}/examples/*`, folderName)
-shell.cp('-Rf', `_gh_pages/docs/${versionShort}/dist/`, `${folderName}/assets/`)
-// also copy the two brand images we use in the examples
-shell.cp('-f', [
-  `_gh_pages/docs/${versionShort}/assets/brand/bootstrap-outline.svg`,
-  `_gh_pages/docs/${versionShort}/assets/brand/bootstrap-solid.svg`
-], `${folderName}/assets/brand/`)
-shell.rm(`${folderName}/index.html`)
+sh.cp('-Rf', `${docsDir}/examples/*`, distFolder)
+
+cssFiles.forEach(file => {
+  sh.cp('-f', `${docsDir}/dist/css/${file}`, `${distFolder}/assets/dist/css/`)
+})
+
+jsFiles.forEach(file => {
+  sh.cp('-f', `${docsDir}/dist/js/${file}`, `${distFolder}/assets/dist/js/`)
+})
+
+imgFiles.forEach(file => {
+  sh.cp('-f', `${docsDir}/assets/brand/${file}`, `${distFolder}/assets/brand/`)
+})
+
+sh.rm(`${distFolder}/index.html`)
 
 // get all examples' HTML files
-shell.find(`${folderName}/**/*.html`).forEach(file => {
-  const fileContents = shell.cat(file)
+sh.find(`${distFolder}/**/*.html`).forEach(file => {
+  const fileContents = sh.cat(file)
     .toString()
     .replace(new RegExp(`"/docs/${versionShort}/`, 'g'), '"../')
     .replace(/"..\/dist\//g, '"../assets/dist/')
     .replace(/(<link href="\.\.\/.*) integrity=".*>/g, '$1>')
     .replace(/(<script src="\.\.\/.*) integrity=".*>/g, '$1></script>')
     .replace(/( +)<!-- favicons(.|\n)+<style>/i, '    <style>')
-  new shell.ShellString(fileContents).to(file)
+  new sh.ShellString(fileContents).to(file)
 })
 
 // create the zip file
-const fileName = `bootstrap-${version}-plus-rtl-rev.${rtlRevision}-examples.zip`
+const fileName = `bootstrap-${pkg.version}-plus-rtl-rev.${pkg['rtl-revision']}-examples.zip`
 const deleteCommand = `PowerShell Remove-Item -Path ${fileName}`
-const buildCommand = `PowerShell Compress-Archive -Path "${folderName}" -CompressionLevel Optimal -DestinationPath ${fileName}`
+const buildCommand = `PowerShell Compress-Archive -Path "${distFolder}" -CompressionLevel Optimal -DestinationPath ${fileName}`
 
-shell.exec(deleteCommand, (code, stdout, stderr) => {
+sh.exec(deleteCommand, (code, stdout, stderr) => {
   code = Number(code)
   if (code === 0 || code === 1) {
-    shell.exec(buildCommand, (code, stdout, stderr) => {
+    sh.exec(buildCommand, (code, stdout, stderr) => {
       code = Number(code)
       if (code === 0) {
-        shell.echo('Package build succeeded!')
+        sh.echo('Package build succeeded!')
       } else {
-        shell.echo(`Error: ${stderr}`)
-        shell.exit(1)
+        sh.echo(`Error: ${stderr}`)
+        sh.exit(1)
       }
 
       // remove the folder we created
-      shell.rm('-rf', folderName)
+      sh.rm('-rf', distFolder)
     })
   } else {
-    shell.echo(`Error: ${stderr}`)
-    shell.exit(1)
+    sh.echo(`Error: ${stderr}`)
+    sh.exit(1)
   }
 })
