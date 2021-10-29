@@ -6,6 +6,7 @@
   .swatch-#{$color} {
     color: color-yiq($value);
     background-color: #{$value};
+    direction: ltr; // rtl
   }
 }
 
@@ -13,5 +14,6 @@
   .swatch-#{$color} {
     color: color-yiq($value);
     background-color: #{$value};
+    direction: ltr; // rtl
   }
 }

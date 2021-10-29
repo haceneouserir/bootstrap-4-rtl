@@ -5,7 +5,7 @@
 .bd-clipboard {
   position: relative;
   display: none;
-  float: left; //rtl
+  float: right; // rtl - does not need to change from RIGHT to LEFT
 
   + .highlight {
     margin-top: 0;
@@ -19,7 +19,7 @@
 .btn-clipboard {
   position: absolute;
   top: .65rem;
-  left: .65rem; //rtl
+  right: .65rem; // rtl - does not need to change from RIGHT to LEFT
   z-index: 10;
   display: block;
   padding: .25rem .5rem;

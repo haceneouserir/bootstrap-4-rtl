@@ -25,23 +25,23 @@ See them in action and compare them in our [Grid example]({{< docsref "/examples
   <thead>
     <tr>
       <th></th>
-      <th>
+      <th class="dir-ltr">
         Extra small<br>
         <span class="font-weight-normal">&lt;576px</span>
       </th>
-      <th>
+      <th class="dir-ltr">
         Small<br>
         <span class="font-weight-normal">&ge;576px</span>
       </th>
-      <th>
+      <th class="dir-ltr">
         Medium<br>
         <span class="font-weight-normal">&ge;768px</span>
       </th>
-      <th>
+      <th class="dir-ltr">
         Large<br>
         <span class="font-weight-normal">&ge;992px</span>
       </th>
-      <th>
+      <th class="dir-ltr">
         Extra large<br>
         <span class="font-weight-normal">&ge;1200px</span>
       </th>

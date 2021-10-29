@@ -21,14 +21,14 @@ Sometimes contextual classes cannot be applied due to the specificity of another
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<p class="text-{{ .name }}{{ if eq .name "light" }} bg-dark{{ end }}">.text-{{ .name }}</p>
+<p class="dir-ltr text-{{ .name }}{{ if eq .name "light" }} bg-dark{{ end }}">.text-{{ .name }}</p>
 {{- end -}}
 {{< /colors.inline >}}
-<p class="text-body">.text-body</p>
-<p class="text-muted">.text-muted</p>
-<p class="text-white bg-dark">.text-white</p>
-<p class="text-black-50">.text-black-50</p>
-<p class="text-white-50 bg-dark">.text-white-50</p>
+<p class="dir-ltr text-body">.text-body</p>
+<p class="dir-ltr text-muted">.text-muted</p>
+<p class="dir-ltr text-white bg-dark">.text-white</p>
+<p class="dir-ltr text-black-50">.text-black-50</p>
+<p class="dir-ltr text-white-50 bg-dark">.text-white-50</p>
 {{< /example >}}
 
 Contextual text classes also work well on anchors with the provided hover and focus states. **Note that the `.text-white` and `.text-muted` class has no additional link styling beyond underline.**
@@ -50,7 +50,7 @@ Similar to the contextual text color classes, easily set the background of an el
 {{< example >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-<div class="p-3 mb-2 bg-{{ .name }} {{ if or (eq .name "light") (eq .name "warning") }}text-dark{{ else }}text-white{{ end }}">.bg-{{ .name }}</div>
+<div class="dir-ltr p-3 mb-2 bg-{{ .name }} {{ if or (eq .name "light") (eq .name "warning") }}text-dark{{ else }}text-white{{ end }}">.bg-{{ .name }}</div>
 {{- end -}}
 {{< /colors.inline >}}
 <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>

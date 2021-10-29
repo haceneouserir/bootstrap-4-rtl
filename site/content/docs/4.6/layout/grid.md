@@ -55,23 +55,23 @@ See how aspects of the Bootstrap grid system work across multiple devices with a
   <thead>
     <tr>
       <th></th>
-      <th class="text-center">
+      <th class="text-center dir-ltr">
         Extra small<br>
         <small>&lt;576px</small>
       </th>
-      <th class="text-center">
+      <th class="text-center dir-ltr">
         Small<br>
         <small>&ge;576px</small>
       </th>
-      <th class="text-center">
+      <th class="text-center dir-ltr">
         Medium<br>
         <small>&ge;768px</small>
       </th>
-      <th class="text-center">
+      <th class="text-center dir-ltr">
         Large<br>
         <small>&ge;992px</small>
       </th>
-      <th class="text-center">
+      <th class="text-center dir-ltr">
         Extra large<br>
         <small>&ge;1200px</small>
       </th>
@@ -95,7 +95,7 @@ See how aspects of the Bootstrap grid system work across multiple devices with a
       <td><code>.col-xl-</code></td>
     </tr>
     <tr>
-      <th class="text-nowrap" scope="row"># of columns</th>
+      <th class="text-nowrap dir-ltr" scope="row"># of columns</th>
       <td colspan="5">12</td>
     </tr>
     <tr>

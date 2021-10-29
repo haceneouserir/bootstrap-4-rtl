@@ -1,6 +1,8 @@
 {{- "<!-- Bootstrap core CSS -->" | safeHTML }}
 {{ if eq hugo.Environment "production" -}}
-<!--<link href="/docs/{{ .Site.Params.docs_version }}/dist/css/bootstrap-rtl.min.css" rel="stylesheet" {{ printf "integrity=%q" .Site.Params.cdn.css_hash | safeHTMLAttr }} crossorigin="anonymous">-->
+<!--
+<link href="/docs/{{ .Site.Params.docs_version }}/dist/css/bootstrap-rtl.min.css" rel="stylesheet" {{ printf "integrity=%q" .Site.Params.cdn.css_hash | safeHTMLAttr }} crossorigin="anonymous">
+-->
 <link href="/docs/{{ .Site.Params.docs_version }}/dist/css/bootstrap-rtl.min.css" rel="stylesheet">
 {{- else -}}
 <link href="/docs/{{ .Site.Params.docs_version }}/dist/css/bootstrap-rtl.css" rel="stylesheet">
@@ -12,7 +14,7 @@
 {{- end -}}
 
 {{- if (ne .Page.Layout "examples") }}
-{{- $targetDocsCssPath := printf "/docs/%s/assets/css/docs.css" .Site.Params.docs_version -}}
+{{- $targetDocsCssPath := path.Join "/docs" .Site.Params.docs_version "assets/css/docs.css" -}}
 {{- $sassOptions := dict "targetPath" $targetDocsCssPath "outputStyle" "expanded" "precision" 6 -}}
 {{- $postcssOptions := dict "use" "autoprefixer" "noMap" true -}}
 

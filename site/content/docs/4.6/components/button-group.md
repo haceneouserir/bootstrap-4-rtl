@@ -131,15 +131,14 @@ Place a `.btn-group` within another `.btn-group` when you want dropdown menus mi
   <button type="button" class="btn btn-secondary">2</button>
 
   <div class="btn-group" role="group">
-    <button type="button" 
-            id="btnGroupDrop1" 
+    <button id="btnGroupDrop1" 
+            type="button" 
             class="btn btn-secondary dropdown-toggle" 
             data-toggle="dropdown" 
-            aria-haspopup="true" 
             aria-expanded="false">
       Dropdown
     </button>
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
       <a class="dropdown-item" href="#">Dropdown link</a>
       <a class="dropdown-item" href="#">Dropdown link</a>
     </div>
@@ -168,15 +167,14 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
     <button type="button" class="btn btn-secondary">Button</button>
     <button type="button" class="btn btn-secondary">Button</button>
     <div class="btn-group" role="group">
-      <button type="button" 
-              id="btnGroupVerticalDrop1" 
+      <button id="btnGroupVerticalDrop1" 
+              type="button" 
               class="btn btn-secondary dropdown-toggle" 
               data-toggle="dropdown" 
-              aria-haspopup="true" 
               aria-expanded="false">
         Dropdown
       </button>
-      <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupVerticalDrop1">
         <a class="dropdown-item" href="#">Dropdown link</a>
         <a class="dropdown-item" href="#">Dropdown link</a>
       </div>
@@ -184,43 +182,40 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
     <button type="button" class="btn btn-secondary">Button</button>
     <button type="button" class="btn btn-secondary">Button</button>
     <div class="btn-group" role="group">
-      <button type="button" 
-              id="btnGroupVerticalDrop2" 
+      <button id="btnGroupVerticalDrop2" 
+              type="button" 
               class="btn btn-secondary dropdown-toggle" 
               data-toggle="dropdown" 
-              aria-haspopup="true" 
               aria-expanded="false">
         Dropdown
       </button>
-      <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop2">
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupVerticalDrop2">
         <a class="dropdown-item" href="#">Dropdown link</a>
         <a class="dropdown-item" href="#">Dropdown link</a>
       </div>
     </div>
     <div class="btn-group" role="group">
-      <button type="button" 
-              id="btnGroupVerticalDrop3" 
+      <button id="btnGroupVerticalDrop3" 
+              type="button" 
               class="btn btn-secondary dropdown-toggle" 
               data-toggle="dropdown" 
-              aria-haspopup="true" 
               aria-expanded="false">
         Dropdown
       </button>
-      <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop3">
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupVerticalDrop3">
         <a class="dropdown-item" href="#">Dropdown link</a>
         <a class="dropdown-item" href="#">Dropdown link</a>
       </div>
     </div>
     <div class="btn-group" role="group">
-      <button type="button" 
-              id="btnGroupVerticalDrop4" 
+      <button id="btnGroupVerticalDrop4" 
+              type="button" 
               class="btn btn-secondary dropdown-toggle" 
               data-toggle="dropdown" 
-              aria-haspopup="true" 
               aria-expanded="false">
         Dropdown
       </button>
-      <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop4">
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupVerticalDrop4">
         <a class="dropdown-item" href="#">Dropdown link</a>
         <a class="dropdown-item" href="#">Dropdown link</a>
       </div>

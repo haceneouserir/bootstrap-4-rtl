@@ -3,7 +3,7 @@
 /*!
  * Script to create the built distribution package zip archive;
  * requires the `Windows PowerShell` to be present!
- * Copyright 2018-2021 Arash Laylazi
+ * Copyright 2018-2021 Arash Laylazi (Inspired by The Bootstrap Authors)
  * Licensed under MIT (https://github.com/PerseusTheGreat/bootstrap-4-rtl/blob/v4-dev/LICENSE)
  */
 

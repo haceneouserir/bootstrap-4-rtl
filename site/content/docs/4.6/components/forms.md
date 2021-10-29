@@ -1337,12 +1337,12 @@ $custom-file-text: (
 );
 ```
 
-Here's `lang(es)` in action on the custom file input for a Spanish translation:
+Here's `lang(es)` in action on the custom file input for a Persian translation:
 
 {{< example >}}
 <div class="custom-file">
-  <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-  <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+  <input type="file" class="custom-file-input" id="customFileLang" lang="fa">
+  <label class="custom-file-label" for="customFileLang">انتخاب پرونده</label>
 </div>
 {{< /example >}}
 

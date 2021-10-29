@@ -23,6 +23,10 @@ Things to know when using the popover plugin:
 - Popovers can be triggered thanks to an element inside a shadow DOM.
 
 {{< callout info >}}
+{{< partial "callout-info-sanitizer.md" >}}
+{{< /callout >}}
+
+{{< callout info >}}
 {{< partial "callout-info-prefersreducedmotion.md" >}}
 {{< /callout >}}
 
@@ -53,14 +57,7 @@ $(function () {
 ## Example
 
 {{< example >}}
-<button type="button" 
-        class="btn btn-lg btn-danger" 
-        data-toggle="popover" 
-        title="Popover title" 
-        data-content="And here's some amazing content. It's very engaging. Right?"
-        data-placement="left">
-  Click to toggle popover
-</button>
+<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="left">Click to toggle popover</button>
 {{< /example >}}
 
 ### Four directions
@@ -68,36 +65,16 @@ $(function () {
 Four options are available: top, right, bottom, and left aligned.
 
 {{< example >}}
-<button type="button" 
-        class="btn btn-secondary" 
-        data-container="body" 
-        data-toggle="popover" 
-        data-placement="right" 
-        data-content="Right popover">
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="Right popover">
   Popover on right
 </button>
-<button type="button" 
-        class="btn btn-secondary" 
-        data-container="body" 
-        data-toggle="popover" 
-        data-placement="top" 
-        data-content="Top popover">
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Top popover">
   Popover on top
 </button>
-<button type="button" 
-        class="btn btn-secondary" 
-        data-container="body" 
-        data-toggle="popover" 
-        data-placement="bottom" 
-        data-content="Bottom popover">
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Bottom popover">
   Popover on bottom
 </button>
-<button type="button" 
-        class="btn btn-secondary" 
-        data-container="body" 
-        data-toggle="popover" 
-        data-placement="left" 
-        data-content="Left popover">
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left" data-content="Left popover">
   Popover on left
 </button>
 {{< /example >}}
@@ -113,16 +90,7 @@ For proper cross-browser and cross-platform behavior, you must use the `<a>` tag
 {{< /callout >}}
 
 {{< example >}}
-<a tabindex="0" 
-   class="btn btn-lg btn-danger" 
-   role="button" 
-   data-toggle="popover" 
-   data-trigger="focus" 
-   title="Dismissible popover" 
-   data-content="And here's some amazing content. It's very engaging. Right?"
-   data-placement="left" >
-  Dismissible popover
-</a>
+<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="left">Dismissible popover</a>
 {{< /example >}}
 
 ```js
@@ -138,16 +106,8 @@ Elements with the `disabled` attribute aren't interactive, meaning users cannot 
 For disabled popover triggers, you may also prefer `data-trigger="hover"` so that the popover appears as immediate visual feedback to your users as they may not expect to _click_ on a disabled element.
 
 {{< example >}}
-<span class="d-inline-block" 
-      data-toggle="popover" 
-      data-content="Disabled popover"
-      data-placement="left">
-  <button type="button" 
-          class="btn btn-primary" 
-          style="pointer-events: none;" 
-          disabled>
-    Disabled button
-  </button>
+<span class="d-inline-block" data-toggle="popover" data-content="Disabled popover" data-placement="left">
+  <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Disabled button</button>
 </span>
 {{< /example >}}
 
@@ -312,7 +272,7 @@ Note that for security reasons the `sanitize`, `sanitizeFn` and `whiteList` opti
       <td>sanitize</td>
       <td>boolean</td>
       <td>true</td>
-      <td>Enable or disable the sanitization. If activated <code>'template'</code>, <code>'content'</code> and <code>'title'</code> options will be sanitized.</td>
+      <td>Enable or disable the sanitization. If activated <code>'template'</code>, <code>'content'</code> and <code>'title'</code> options will be sanitized. See the <a href="{{< docsref "/getting-started/javascript#sanitizer" >}}">sanitizer section in our JavaScript documentation</a>.</td>
     </tr>
     <tr>
       <td>whiteList</td>
