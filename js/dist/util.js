@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap util.js v4.6.1 (https://bootstrapper.ir/)
-  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors) and Arash Laylazi (https://github.com/PerseusTheGreat)
+  * Bootstrap util.js v4.6.2 (https://bootstrapper.ir/)
+  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors) and Arash Laylazi (https://github.com/PerseusTheGreat)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -15,7 +15,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.6.1): util.js
+   * Bootstrap (v4.6.2): util.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */

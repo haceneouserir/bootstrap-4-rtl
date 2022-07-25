@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap carousel.js v4.6.1 (https://bootstrapper.ir/)
-  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors) and Arash Laylazi (https://github.com/PerseusTheGreat)
+  * Bootstrap carousel.js v4.6.2 (https://bootstrapper.ir/)
+  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors) and Arash Laylazi (https://github.com/PerseusTheGreat)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -27,11 +27,14 @@
   function _createClass(Constructor, protoProps, staticProps) {
     if (protoProps) _defineProperties(Constructor.prototype, protoProps);
     if (staticProps) _defineProperties(Constructor, staticProps);
+    Object.defineProperty(Constructor, "prototype", {
+      writable: false
+    });
     return Constructor;
   }
 
   function _extends() {
-    _extends = Object.assign || function (target) {
+    _extends = Object.assign ? Object.assign.bind() : function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
 
@@ -44,13 +47,12 @@
 
       return target;
     };
-
     return _extends.apply(this, arguments);
   }
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.6.1): rtl.js
+   * Bootstrap (v4.6.2): rtl.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * Document Direction Detector
    * Used in Carousel.js to correct touch experience
@@ -75,7 +77,7 @@
    */
 
   var NAME = 'carousel';
-  var VERSION = '4.6.1';
+  var VERSION = '4.6.2';
   var DATA_KEY = 'bs.carousel';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';

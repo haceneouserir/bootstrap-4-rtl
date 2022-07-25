@@ -5,8 +5,8 @@
  * Remember to use the same vendor files as the CDN ones,
  * otherwise the hashes won't match!
  *
- * Copyright 2017-2021 The Bootstrap Authors
- * Copyright 2017-2021 Twitter, Inc.
+ * Copyright 2017-2022 The Bootstrap Authors
+ * Copyright 2017-2022 Twitter, Inc.
  * Copyright 2018-2021 Arash Laylazi (Inspired by The Bootstrap Authors)
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */

@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.6.1): rtl.js
+ * Bootstrap (v4.6.2): rtl.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * Document Direction Detector
  * Used in Carousel.js to correct touch experience

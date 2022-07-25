@@ -1337,7 +1337,7 @@ $custom-file-text: (
 );
 ```
 
-Here's `lang(es)` in action on the custom file input for a Persian translation:
+Here's `lang(fa)` in action on the custom file input for a Persian translation:
 
 {{< example >}}
 <div class="custom-file">

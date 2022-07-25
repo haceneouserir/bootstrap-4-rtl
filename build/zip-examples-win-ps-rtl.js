@@ -3,7 +3,7 @@
 /*!
  * Script to create the built examples zip archive;
  * requires the `zip` command to be present!
- * Copyright 2018-2021 Arash Laylazi (Inspired by The Bootstrap Authors)
+ * Copyright 2018-2022 Arash Laylazi (Inspired by The Bootstrap Authors)
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 

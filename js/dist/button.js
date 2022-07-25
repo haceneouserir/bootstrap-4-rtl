@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap button.js v4.6.1 (https://bootstrapper.ir/)
-  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors) and Arash Laylazi (https://github.com/PerseusTheGreat)
+  * Bootstrap button.js v4.6.2 (https://bootstrapper.ir/)
+  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors) and Arash Laylazi (https://github.com/PerseusTheGreat)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -26,6 +26,9 @@
   function _createClass(Constructor, protoProps, staticProps) {
     if (protoProps) _defineProperties(Constructor.prototype, protoProps);
     if (staticProps) _defineProperties(Constructor, staticProps);
+    Object.defineProperty(Constructor, "prototype", {
+      writable: false
+    });
     return Constructor;
   }
 
@@ -34,7 +37,7 @@
    */
 
   var NAME = 'button';
-  var VERSION = '4.6.1';
+  var VERSION = '4.6.2';
   var DATA_KEY = 'bs.button';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
