@@ -366,7 +366,7 @@ var,
 [type="password"],
 [type="tel"],
 [type="url"] {
-  text-align: left;
+  text-align: right;
   direction: ltr;
 }
 
@@ -2060,26 +2060,31 @@ pre code {
 .form-control::-webkit-input-placeholder {
   color: #6c757d;
   opacity: 1;
+  text-align: right;
 }
 
 .form-control::-moz-placeholder {
   color: #6c757d;
   opacity: 1;
+  text-align: right;
 }
 
 .form-control:-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
+  text-align: right;
 }
 
 .form-control::-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
+  text-align: right;
 }
 
 .form-control::placeholder {
   color: #6c757d;
   opacity: 1;
+  text-align: right;
 }
 
 .form-control:disabled, .form-control[readonly] {
